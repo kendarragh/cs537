@@ -1,2 +1,4 @@
 char **split_line(int linenum, char* line);
-void parse(char* filename);
+Node** parse(char* filename);
+void print_error(int linenum, char* line);
+int starts_with_tab(char* line);

@@ -1,0 +1,18 @@
+537make is a simple version of the linux make command. 
+Here are the modules we used:
+    parse.c is used to parse the makefile. The makefile can be specified
+    or the default makefile. Parsing is done line by line, so we have
+    incomplete knowledge while we parse and create nodes.
+
+    node.c represents one node. Dependencies are first stored as strings,
+    because we cannot differentiate between files and targets immediately.
+    Later in graph.c we will convert these dependencies to separate files
+    and children
+
+    graph.c builds and traverses the graph. It also checks for cycles
+    and will call execute to execute commands
+
+    execute.c will execute one command at a time, waiting for it to complete
+    and checking its error code.
+
+
