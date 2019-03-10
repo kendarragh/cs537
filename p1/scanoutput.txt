@@ -1,0 +1,13 @@
+rm -f 537ps *.o
+rm -rf scan-build-out
+scan-build -o scan-build-out make
+scan-build: Using '/afs/cs.wisc.edu/s/clang-6.0.1/@sys/bin/clang-8' for static analysis
+make[1]: Entering directory '/afs/cs.wisc.edu/u/k/e/kenneth/private/cs537/p1'
+/afs/cs.wisc.edu/s/clang-6.0.1/@sys/bin/../libexec/ccc-analyzer -Wall -Wextra -c main.c
+/afs/cs.wisc.edu/s/clang-6.0.1/@sys/bin/../libexec/ccc-analyzer    -c -o options_processing.o options_processing.c
+/afs/cs.wisc.edu/s/clang-6.0.1/@sys/bin/../libexec/ccc-analyzer -Wall -Wextra -c process_list.c
+/afs/cs.wisc.edu/s/clang-6.0.1/@sys/bin/../libexec/ccc-analyzer -Wall -Wextra -c stat_file_parser.c
+/afs/cs.wisc.edu/s/clang-6.0.1/@sys/bin/../libexec/ccc-analyzer -o 537ps main.o options_processing.o process_list.o stat_file_parser.o
+make[1]: Leaving directory '/afs/cs.wisc.edu/u/k/e/kenneth/private/cs537/p1'
+scan-build: 6 bugs found.
+scan-build: Run 'scan-view /afs/cs.wisc.edu/u/k/e/kenneth/private/cs537/p1/scan-build-out/2018-10-01-200354-21784-1' to examine bug reports.

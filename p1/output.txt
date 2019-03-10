@@ -1,0 +1,30 @@
+<pid>: <state> utime=<user time> stime=<system time> vmemory=<virtual memory> [<command line>]
+
+Note: If the state, user time, system time, virtual memory, or command line flags are turned off,
+then you should not print their respective part of the output.
+
+Here are some examples:
+
+1)
+> 537ps -p 1234 -s -S -v
+1234: R utime=150 stime=280 vmemory=6433 [myprog -x -y file1 myoption]
+
+2)
+> 537ps -p 1234 -s- -U- -S- -v- -c-
+1234:
+
+3)
+> 537ps -p 1234 -s -U- -S -c-
+1234: R stime=150
+
+4)
+> 537ps -p 1234
+1234: utime=150 [myprog -x -y file1 myoption]
+
+Note: When listing multiple files, list them in order of increasing pid.
+
+> 537ps
+10: utime=150 [myprog -x -y file1 myoption]
+58: utime=390 [myprog2 -z file2]
+100: utime=480 [myprog3 -z file3]
+

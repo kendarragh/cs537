@@ -1,0 +1,7 @@
+print stats
+print in writer
+check for buffer overflow
+    also figure out what even needs a buffer
+rename to prodcomm
+comment, check for MAGIC NUMBERS
+use const int instead of define

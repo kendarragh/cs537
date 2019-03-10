@@ -1,0 +1,11 @@
+My code seems okay if I block in main.c and make sure only one of reader, m1, m2 writer
+    happens at a time, but this doesn't seem very parallel?
+
+If we aren't supposed to block in main.c, do we block during input? if not why do weird
+    things happen
+
+Signalling that input is done, a few ideas?
+    Why is global var bad?
+    Var in queue that is set when we receive eof, combine with size?
+    var in queue vs some sort of item in queue that signals its the last item (not null?)
+    Seems easy enough for reader but what about q2 and q3?

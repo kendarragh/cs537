@@ -1,0 +1,16 @@
+537ps implements some features of linux's ps command.
+
+options_processing.c processes the options as outlines in the product specification. 
+Some of the errors thrown may be unessecary as the spec/canvas discussions had some ambiguity.
+
+process_list.c is used to get an array of all pids belonging to the user.
+The list is equivalent to the processes returned by ps -u user.
+The structure is admittedly a little wonky as we originally thought the output had to be sorted.
+We removed that aspect as per a canvas post but that is why we originally decided to return an array
+in the first place, as we could sort it before calling stat.
+
+stat_file_parser parses the stat, statm, and cmdline files to format output. It is called once for
+each process to provide one line of output each.
+
+Ken Darragh
+Courtney Trescher

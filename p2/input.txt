@@ -1,0 +1,2 @@
+Replace all spaces with stars.
+makeallcaps
